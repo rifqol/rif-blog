@@ -10,8 +10,10 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                 <x-nav-link href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
+                <x-nav-link href="/categories" :active="request()->is('categories')">Category</x-nav-link>
                 <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
                 <x-nav-link href="/contact" :active="request()->is('contact')">Contacs</x-nav-link>
+                
             </div>
           </div>
         </div>
@@ -72,6 +74,7 @@
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
         <x-nav-link href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
+        <x-nav-link href="/categories" :active="request()->is('categories')">Category</x-nav-link>
         <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
         <x-nav-link href="/contact" :active="request()->is('contact')">Contacs</x-nav-link>
       </div>

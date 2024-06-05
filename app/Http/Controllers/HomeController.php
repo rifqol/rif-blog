@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home', ['title' => 'Home Page']);
+        return view('home', ['title' => 'Home Page', 'posts' => Post::with('author', 'category')->latest()->paginate(10)]);
     }
 }

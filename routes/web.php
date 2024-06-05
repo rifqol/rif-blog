@@ -18,5 +18,5 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class , 'show']);
 Route::get('/authors/{user:username}', [AuthorController::class, 'show']);
-Route::get('/categories/{category:slug}', [CategoryController::class, 'index']);
+Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);

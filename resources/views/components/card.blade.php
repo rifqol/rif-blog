@@ -1,6 +1,6 @@
 <!-- card-component.blade.php -->
 
-@props(['title', 'body', 'category', 'author', 'created_at', 'slug'])
+@props(['title', 'body', 'category', 'author', 'created_at', 'slug', 'image'])
 
 <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden">
     <div class="px-4 py-4">
@@ -9,7 +9,15 @@
                 {{ $category->name }}
             </a>
         </div>
+        @if ($image)
+        <div style="max-height: 350px; overflow:hidden">
+            <img src="{{ asset('storage/' . $image) }}" alt="{{ $image }}" class="mx-auto mb-4 rounded-lg w-auto"></img>
+        </div>
+        @else
+            
         <img src="https://source.unsplash.com/500x400/?{{ $category->name }}" alt="{{ $category->name }}" class="mx-auto mb-4 rounded-lg w-auto"></img>
+
+        @endif
         <a href="/posts/{{ $slug }}" class="hover:underline">   
             <div class="font-bold text-xl mb-2">{{ $title }}</div>
         </a>

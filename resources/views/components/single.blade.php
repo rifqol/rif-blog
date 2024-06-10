@@ -1,4 +1,4 @@
-@props(['title', 'body', 'category', 'author', 'created_at', 'slug'])
+@props(['title', 'body', 'category', 'author', 'created_at', 'slug', 'image'])
 
 <div class="container mx-auto">
     <div class="flex justify-center">
@@ -11,8 +11,15 @@
                 <a href="/posts?category={{ $category->slug }}" class="hover:underline text-base text-gray-500">{{ $category->name }}</a> | {{ $created_at }}
             </div>
 
-            <img src="https://source.unsplash.com/1200x400/?{{ $category->name }}" alt="{{ $category->name }}" class="mx-auto mb-4 rounded-lg w-auto"></img>
 
+            @if ($image)
+                <div style="max-height: 350px; overflow:hidden">
+                    <img src="{{ asset('storage/' . $image) }}" alt="{{ $image }}" class="mx-auto mb-4 rounded-lg w-auto"></img>
+                </div>
+            @else
+                <img src="https://source.unsplash.com/1200x400/?{{ $category->name }}" alt="{{ $category->name }}" class="mx-auto mb-4 rounded-lg w-auto"></img>
+            @endif
+            
             <article class="my-4 font-light text-lg">
                 {{ $body }}
             </article>

@@ -16,8 +16,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::create([
+            'name' => 'Rifqi Fadhilah',
+            'username' => 'rifqol',
+            'email' => 'rifqifadh1lah586@gmail.com',
+            'password' => bcrypt('password')
+        ]);
+
+
         $this->call([CategorySeeder::class, UserSeeder::class]);
-        Post::factory(100)->recycle([
+        Post::factory(20)->recycle([
             Category::all(),
             User::all()  
         ])->create();
